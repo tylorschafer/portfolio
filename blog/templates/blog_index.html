@@ -1,7 +1,12 @@
 {% extends "base.html" %}
 {% block page_content %}
+{% load static %}
+<head>
+  <link rel="stylesheet" href="{% static 'css/projects.css' %}">
+</head>
+
 <div class="col-md-8 offset-md-2">
-    <h1>Blog Index</h1>
+    <h1 class='main-title'>Blog Index</h1>
     <hr>
     {% for post in posts %}
     <h2><a href="{% url 'blog_detail' post.pk%}">{{ post.title }}</a></h2>
