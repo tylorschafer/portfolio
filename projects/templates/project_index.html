@@ -4,12 +4,12 @@
 <head>
   <link rel="stylesheet" href="{% static 'css/projects.css' %}">
 </head>
-<h1 class='main-title'>Projects</h1>
+<h1 class='main-title display-4'>Projects</h1>
 <hr>
 <div class="row">
 {% for project in projects %}
     <div class="col-md-4">
-        <div class="card mb-2">
+        <div class="card text-black bg-light mb-3">
             <img class="card-img-top" src="{% static project.image %}">
             <div class="card-body">
                 <h5 class="card-title">{{ project.title }}</h5>
