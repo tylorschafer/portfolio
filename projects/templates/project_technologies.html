@@ -1,0 +1,32 @@
+{% extends "base.html" %}
+{% load static %}
+{% block page_content %}
+
+  <h1 class='main-title display-4 pt-3 text-center'>{{ technology | title }} Projects</h1>
+  <hr>
+  <div class="row">
+    {% for project in projects %}
+        <div class="col-md-4">
+            <div class="card text-black bg-light mb-3">
+                <img class="card-img-top" src="{% static project.image %}">
+                <div class="card-body">
+                    <h5 class="card-title">{{ project.title }}</h5>
+                    <p class="card-text">{{ project.description }}</p>
+                    <small>
+                      Categories:&nbsp;
+                      {% for tech in project.technologies.all %}
+                      <a href="{% url 'project_technologies' tech.name %}">
+                        {{ tech.name }}
+                      </a>&nbsp;
+                      {% endfor %}
+                    </small>
+                    <a href="{% url 'project_detail' project.pk %}"
+                       class="btn btn-dark mt-3">
+                        Read More
+                    </a>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+  </div>
+{% endblock %}

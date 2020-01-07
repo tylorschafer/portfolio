@@ -16,7 +16,9 @@
         <br>
         <h5>Technology used:</h5>
         {% for tech in project.technologies.all %}
-          <p class="btn btn-info">{{ tech }}</p>
+          <a href="{% url 'project_technologies' tech.name %}">
+            <p class="btn btn-info">{{ tech }}</p>
+          </a>
         {% endfor %}
 
         <h5>Links</h5>

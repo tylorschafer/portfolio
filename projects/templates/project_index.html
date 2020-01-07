@@ -14,8 +14,16 @@
             <div class="card-body">
                 <h5 class="card-title">{{ project.title }}</h5>
                 <p class="card-text">{{ project.description }}</p>
+                <small>
+                  Categories:&nbsp;
+                  {% for tech in project.technologies.all %}
+                  <a href="{% url 'project_technologies' tech.name %}">
+                    {{ tech.name }}
+                  </a>&nbsp;
+                  {% endfor %}
+                </small>
                 <a href="{% url 'project_detail' project.pk %}"
-                   class="btn btn-dark">
+                   class="btn btn-dark mt-3">
                     Read More
                 </a>
             </div>
