@@ -3,16 +3,24 @@
 {% load static %}
 
 <head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <link rel="stylesheet" href="{% static 'css/projects.css' %}">
 </head>
 
-
-<h1>About Me</h1>
-
-<section>
-  {% for data in about_me %}
-    {{ data.body }}
-  {% endfor %}
-</section>
+<body>
+  <section class='container-md mt-5'>
+    <section class='row'>
+      <section class='col-lg p-1'>
+        <img src="{% static 'img/me.jpg' %}" alt="" width="100%" class="img-fluid rounded mx-auto d-block">
+      </section>
+      <section class='col-lg p-1 ml-5'>
+        {% for data in about_me %}
+        <p class='lead'>{{ data.body }}</p>
+        {% endfor %}
+      </section>
+    </section>
+  </section>
+</body>
 
 {% endblock %}
