@@ -1,3 +1,7 @@
 from django.contrib import admin
+from about_me.models import AboutMe
 
-# Register your models here.
+class AboutMeAdmin(admin.ModelAdmin):
+    pass
+
+admin.site.register(AboutMe, AboutMeAdmin)
