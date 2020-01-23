@@ -9,15 +9,41 @@
 </head>
 
 <body>
-  <section class='container-md mt-5'>
+  <section class='container-fluid mt-5 w-45'>
     <section class='row'>
       <section class='col-lg p-1'>
-        <img src="{% static 'img/me.jpg' %}" alt="" width="100%" class="img-fluid rounded mx-auto d-block">
+        <section class='containter-sm'>
+          <section class='row'>
+            <section class='col-md p-1'>
+              <img src="{% static 'img/me.jpg' %}" alt="" width="100%" class="rounded">
+            </section>
+            <section class='col-md p-1'>
+              <img src="{% static 'img/me.jpg' %}" alt="" width="100%" class="rounded">
+            </section>
+
+            <section class='row'>
+              <section class='col-md p-1'>
+                <img src="{% static 'img/me.jpg' %}" alt="" width="100%" class="rounded">
+              </section>
+              <section class='col-md p-1'>
+                <img src="{% static 'img/me.jpg' %}" alt="" width="100%" class="rounded">
+              </section>
+            </section>
+          </section>
+        </section>
       </section>
+
       <section class='col-lg p-1 ml-5'>
-        {% for data in about_me %}
-        <p class='lead'>{{ data.body }}</p>
-        {% endfor %}
+        <p class='lead'>
+          I am a highly creative, organized, and devoted web developer. My love for design and problem solving drive my passion for programming. I believe in developing unique, fun, fast, and friendly applications that are created for the most diverse user base conceivable.
+        </p>
+        <p class='lead'>
+          My previous experience in sales and management have given me the skills necessary to thrive in team dynamics. I love to contribute my strengths in creative problem solving and leadership on team-based projects. I strive to work on teams that build high quality programs that improve the quality of life for all users.
+        </p>
+        <p class='lead'>
+          My specialization is in back end engineering, with a focus in Ruby on Rails and PostgreSQL. I use HTML and CSS for design, and have experience in Javascript. My unquenchable curiosity and love for the field drives me to learn new concepts and languages as often as possible.
+        </p>
+
       </section>
     </section>
   </section>
